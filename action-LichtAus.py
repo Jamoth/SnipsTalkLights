@@ -38,7 +38,12 @@ def action_wrapper(hermes, intentMessage, conf):
 
     Refer to the documentation for further details.
     """
-    result_sentence= "Da geht was lokal!"
+    if len(intentMessage.slots.objectLocation) > 0:
+        objectLocation = intentMessage.slots.objectLocation.first().value # We extract the value from the slot "house_room"
+        result_sentence = "Schalte das Licht {} aus".format(str(objectLocation))  # The response that will be said out loud by the TTS engine.
+    else:
+        result_sentence = 	"Schalte das Licht aus"
+        
     current_session_id = intentMessage.session_id
     hermes.publish_end_session(current_session_id, result_sentence)
 
