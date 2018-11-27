@@ -1,5 +1,4 @@
 #!/usr/bin/env python2
-# -*- coding: utf-8 -*-
 
 import ConfigParser
 from hermes_python.hermes import Hermes
@@ -40,7 +39,7 @@ def action_wrapper(hermes, intentMessage, conf):
     """
     if len(intentMessage.slots.objectLocation) > 0:
         objectLocation = intentMessage.slots.objectLocation.first().value # We extract the value from the slot "house_room"
-        result_sentence = "Schalte das Licht {} aus".format(objectLocation.encode('utf-8'))  # The response that will be said out loud by the TTS engine.
+        result_sentence = "Schalte das Licht {} aus".format(str(objectLocation))  # The response that will be said out loud by the TTS engine.
     else:
         result_sentence = 	"Schalte das Licht aus"
         
