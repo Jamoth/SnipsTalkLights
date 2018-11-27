@@ -38,6 +38,9 @@ def action_wrapper(hermes, intentMessage, conf):
 
     Refer to the documentation for further details.
     """
+    for (slot_value, slot) in intentMessage.slots.objectLocation.first():
+        print('Slot {} -> \n\tRaw: {} \tValue: {}'.format(slot_value, slot[0].raw_value, slot[0].slot_value.value.value))
+        
     if len(intentMessage.slots.objectLocation) > 0:
         objectLocation = ((intentMessage.slots.objectLocation.first().value)) # We extract the value from the slot "house_room"
         result_sentence = "Schalte das Licht {} aus".format(objectLocation)
