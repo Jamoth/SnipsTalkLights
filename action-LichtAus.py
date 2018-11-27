@@ -39,7 +39,7 @@ def action_wrapper(hermes, intentMessage, conf):
     Refer to the documentation for further details.
     """
     if len(intentMessage.slots.objectLocation) > 0:
-        objectLocation = str8(intentMessage.slots.objectLocation.first().value).encode('utf8')) # We extract the value from the slot "house_room"
+        objectLocation = str((intentMessage.slots.objectLocation.first().value).encode('utf8')) # We extract the value from the slot "house_room"
         result_sentence = "Schalte das Licht {} aus".format(objectLocation)  # The response that will be said out loud by the TTS engine.
     else:
         result_sentence = 	"Schalte das Licht aus"
