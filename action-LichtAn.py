@@ -39,11 +39,9 @@ def action_wrapper(hermes, intentMessage, conf):
     
     if len(intentMessage.slots.objectLocation) > 0:
         objectLocation = ((intentMessage.slots.objectLocation.first().value))
-        result_sentence = "Schalte das Licht {} aus".format(objectLocation.decode('utf-8'))        
+        result_sentence = u"Schalte das Licht {} an".format(objectLocation.decode('utf-8'))        
     else:
-        result_sentence = 	"Schalte das Licht aus"
-        
-    result_sentence = 	"Hätte Tüte Draußen Öl"
+        result_sentence = 	"Schalte das Licht an"
         
     current_session_id = intentMessage.session_id
     hermes.publish_end_session(current_session_id, result_sentence)
