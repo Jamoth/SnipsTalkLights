@@ -3,7 +3,7 @@
 
 import ConfigParser
 from hermes_python.hermes import Hermes
-from hermes_python.ontology import *
+from hermes_python.ontology.dialogue import InstantTimeValue, TimeIntervalValue
 import io
 
 CONFIGURATION_ENCODING_FORMAT = "utf-8"
