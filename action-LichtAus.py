@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from hermes_python.hermes import Hermes
 
-def action_wrapper(hermes, intentMessage, conf):
+def action_wrapper(hermes, intentMessage):
     """ Write the body of the function that will be executed once the intent is recognized.
     In your scope, you have the following objects :
     - intentMessage : an object that represents the recognized intent
