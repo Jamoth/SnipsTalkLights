@@ -13,8 +13,8 @@ def action_wrapper(hermes, intentMessage):
     """
     
     if len(intentMessage.slots.objectLocation) > 0:
-        objectLocation = ((intentMessage.slots.objectLocation.first().value))
-        result_sentence = "Schalte das Licht {} aus".format(objectLocation)        
+        myobjectLocation = ((intentMessage.slots.objectLocation.first().value))
+        result_sentence = "Schalte das Licht {} aus".format(myobjectLocation)        
     else:
         result_sentence = 	"Schalte das Licht aus"
         
